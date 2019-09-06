@@ -1,5 +1,6 @@
 package com.chezi008.libphotopreview.manager;
 
+import com.chezi008.libphotopreview.listener.EventListener;
 import com.chezi008.libphotopreview.listener.GlideListener;
 
 /**
@@ -22,4 +23,6 @@ public class PreviewListenerManager {
     }
 
     public GlideListener glideListener;
+
+    public EventListener eventListener;
 }

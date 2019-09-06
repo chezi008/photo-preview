@@ -37,7 +37,7 @@ public class PreviewFragment extends Fragment implements PhotoPagerHelper.PageHe
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_album_preview, container, false);
+        View view = inflater.inflate(R.layout.pp_fragment_album_preview, container, false);
         List<PhotoBean> list = getArguments().getParcelableArrayList("data");
         mData.addAll(list);
         position = getArguments().getInt("pos");
@@ -60,7 +60,8 @@ public class PreviewFragment extends Fragment implements PhotoPagerHelper.PageHe
         taPagerHelper.setListener(this);
         taPagerHelper.attachToRecyclerView(rcList);
 
-        ltAddDot = view.findViewById(R.id.ltAddDot);
+
+        ltAddDot = view.findViewById(R.id.tvIndex);
         ltAddDot.setText(String.format("%s/%s",position+1,mData.size()));
     }
 

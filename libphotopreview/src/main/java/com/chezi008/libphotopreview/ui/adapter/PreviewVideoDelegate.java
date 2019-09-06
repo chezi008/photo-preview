@@ -28,18 +28,26 @@ class PreviewVideoDelegate extends AdapterDelegate<List<PhotoBean>> {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_preview_video, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pp_item_preview_video, parent, false);
         return new PreviewVideoHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull List<PhotoBean> items, int position, @NonNull RecyclerView.ViewHolder holder, @NonNull List<Object> payloads) {
         final PreviewVideoHolder pHolder = (PreviewVideoHolder) holder;
-        PhotoBean mb = items.get(position);
+        final PhotoBean mb = items.get(position);
         //thumb
         if (PreviewListenerManager.getInstance().glideListener != null) {
             PreviewListenerManager.getInstance().glideListener.loadLocalImage(pHolder.ivPhoto, mb.path);
         }
+        pHolder.ivPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (PreviewListenerManager.getInstance().glideListener != null) {
+                    PreviewListenerManager.getInstance().eventListener.onVideoPlayClick(mb.path);
+                }
+            }
+        });
     }
 
     static class PreviewVideoHolder extends RecyclerView.ViewHolder {

@@ -23,7 +23,7 @@ public class PreviewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preview);
+        setContentView(R.layout.pp_activity_preview);
 
         Fragment fragment = buildAlbumFragment();
         fragment.setArguments(getIntent().getExtras());

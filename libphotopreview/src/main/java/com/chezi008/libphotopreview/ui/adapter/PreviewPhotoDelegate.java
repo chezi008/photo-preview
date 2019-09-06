@@ -30,7 +30,7 @@ class PreviewPhotoDelegate extends AdapterDelegate<List<PhotoBean>> {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_preview_photo, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pp_item_preview_photo, parent, false);
         return new PreviewPhotoHolder(view);
     }
 

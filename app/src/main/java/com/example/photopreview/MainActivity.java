@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.chezi008.libphotopreview.bean.PhotoBean;
+import com.chezi008.libphotopreview.listener.EventListener;
 import com.chezi008.libphotopreview.listener.GlideListener;
 import com.chezi008.libphotopreview.manager.PreviewListenerManager;
 import com.chezi008.libphotopreview.ui.activity.PreviewActivity;
@@ -40,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void loadLocalImage(ImageView imageView, String path) {
                 Glide.with(imageView).load(path).into(imageView);
+            }
+        };
+        PreviewListenerManager.getInstance().eventListener = new EventListener() {
+            @Override
+            public void onVideoPlayClick(String path) {
+                Toast.makeText(MainActivity.this, "click", Toast.LENGTH_SHORT).show();
             }
         };
     }
