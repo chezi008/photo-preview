@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.chezi008.libphotopreview.R;
 import com.chezi008.libphotopreview.bean.PhotoBean;
@@ -23,6 +25,12 @@ public class PreviewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //不显示程序的标题栏
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        //不显示系统的标题栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.pp_activity_preview);
 
         Fragment fragment = buildAlbumFragment();

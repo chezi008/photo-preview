@@ -70,6 +70,6 @@ public class PreviewFragment extends Fragment implements PhotoPagerHelper.PageHe
     public void onPageChanged(int position) {
         //设置标题
         this.position = position;
-        ltAddDot.setText(String.format("%s/%s",position+1,mData.size()));
+        ltAddDot.setText(String.format("%s/%s",position==mData.size()?mData.size():position+1,mData.size()));
     }
 }

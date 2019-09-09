@@ -3,7 +3,8 @@
     package="com.chezi008.libphotopreview">
 
     <application>
-        <activity android:name=".ui.activity.PreviewActivity"></activity>
+        <activity android:name=".ui.activity.PreviewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         PreviewListenerManager.getInstance().eventListener = new EventListener() {
             @Override
             public void onVideoPlayClick(String path) {
-                Toast.makeText(MainActivity.this, "click", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "click0", Toast.LENGTH_SHORT).show();
             }
         };
     }
