@@ -2,10 +2,10 @@ package com.chezi008.libphotopreview.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -39,7 +39,6 @@ public class PreviewActivity extends AppCompatActivity {
         ft.replace(R.id.clParent, fragment, "preview");
         ft.commit();
     }
-
 
     protected Fragment buildAlbumFragment() {
         PreviewFragment fragment = (PreviewFragment) getSupportFragmentManager().findFragmentByTag("preview");
